@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :bookmarks, only: [:destroy]
 
+  resources :movies, only: [:show]
+
   get "up" => "rails/health#show", as: :rails_health_check
 end
 

@@ -1,0 +1,46 @@
+<h1>List Details</h1>
+
+<p><strong>List Name:</strong> <%= @list.name %></p> <!-- Display list name -->
+
+<h2>Bookmarks</h2>
+
+<% if @list.bookmarks.any? %> <!-- Check if the list has any bookmarks -->
+  <ul>
+    <% @list.bookmarks.each do |bookmark| %> <!-- Iterate over bookmarks -->
+      <li>
+        <%= link_to bookmark.movie.title, bookmark.movie %> <!-- Display movie title with link to movie details -->
+        <% if bookmark.comment.present? %> <!-- Display bookmark comment if present -->
+          - <%= bookmark.comment %>
+        <% end %>
+        <!-- Add delete link for bookmark (if desired) -->
+        <%# <%= link_to 'Delete Bookmark', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to "Delete Bookmark",
+          bookmark,
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No bookmarks found for this list.</p> <!-- Display message if no bookmarks found -->
+<% end %>
+
+
+<h2>Add Bookmark</h2>
+<%= form_with(model: [@list, Bookmark.new]) do |form| %>
+  <div class="field">
+    <%= form.label :movie_id %>
+    <%= form.collection_select :movie_id, Movie.all, :id, :title, prompt: "Select a Movie" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_field :comment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Add Bookmark" %>
+  </div>
+<% end %>
+
+<%= link_to 'Back to Lists', lists_path %> <!-- Link to go back to lists index page -->

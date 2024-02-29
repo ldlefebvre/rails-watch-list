@@ -1,0 +1,7 @@
+<h1>Create a New List</h1>
+
+<%= simple_form_for @list do |form| %> <!-- Create form for list using simple_form -->
+  <%= form.input :name, label: "List Name" %> <!-- Input field for list name -->
+
+  <%= form.button :submit, "Create List", class: "btn btn-primary" %> <!-- Submit button -->
+<% end %>
