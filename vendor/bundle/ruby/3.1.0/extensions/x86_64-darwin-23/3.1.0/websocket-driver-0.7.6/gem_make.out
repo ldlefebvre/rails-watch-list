@@ -1,0 +1,15 @@
+current directory: /Users/ldlefebvre/code/ldlefebvre/rails-watch-list/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+/Users/ldlefebvre/.rbenv/versions/3.1.2/bin/ruby -I /Users/ldlefebvre/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20240229-12351-5qywzl.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ldlefebvre/code/ldlefebvre/rails-watch-list/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= clean
+
+current directory: /Users/ldlefebvre/code/ldlefebvre/rails-watch-list/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\=
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/ldlefebvre/code/ldlefebvre/rails-watch-list/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20240229-12351-nswbpe
