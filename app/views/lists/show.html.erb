@@ -1,5 +1,6 @@
 <h1>List Details</h1>
 
+<%= cl_image_tag(@list.photo.key, height: 300, width: 400, crop: :fit) if @list.photo.present? %>
 <p><strong>List Name:</strong> <%= @list.name %></p> <!-- Display list name -->
 
 <h2>Bookmarks</h2>
